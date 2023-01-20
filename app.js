@@ -27,15 +27,6 @@ spotifyApi
 })
 .catch(error => console.log('Something went wrong when retrieving an access token', error));
 
-// spotifyApi.getArtistAlbums('43ZHCT0cAZBISjO8DG9PnE').then(
-//     function(data) {
-//       console.log('Artist albums', data.body);
-//     },
-//     function(err) {
-//       console.error(err);
-//     }
-//   );
-
 // Our routes go here:
 
 app.get('/', (req, res) => {
@@ -73,17 +64,6 @@ app.get('/albums/:artistId', (req, res, next) => {
         .catch(err => console.log('The error while searching artists occurred: ', err));   
     
 })
-
-// app.get('/tracks/:albumId', (req, res) => {
-//         const {albumId} = req.params
-//         spotifyApi
-//             .getAlbumTracks(albumId)
-//             .then(data => {
-//                 console.log('Album tracks', data.body);
-//                 res.render('tracks', data.body)
-//             })
-//             .catch(err => console.log('The error while searching artists occurred: ', err));  
-// });
 
 app.get('/tracks/:albumId', (req, res) => {
     const {albumId} = req.params
